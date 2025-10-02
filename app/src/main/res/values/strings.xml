@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Android_Base_2025</string>
+
+    <string name="uploadToLibrary">Uploading to Library</string>
+    <string name="photoLibraryAttachPhoto">Attach Photos * (Max 50)</string>
+    <string name="photoLibraryJobProject">Job/Project *</string>
+    <string name="photoLibraryLocation">Location</string>
+    <string name="photoLibraryPhotoFolder">Photo Folder *</string>
+    <string name="photoLibraryAddingTags">Adding Tags (Applied to all attached photos)</string>
+    <string name="photoLibraryAddingTagsDialog">Adding Tags</string>
+    <string name="photoLibraryAddingInternalStaff">Adding Internal Staff</string>
+    <string name="photoLibrarySendNotificationTo">Send email notification to</string>
+    <string name="photoLibraryUploadingToLibrary">Uploading to Library</string>
+    <string name="photoLibraryUpload">Upload</string>
+    <string name="photoLibraryJobError">Job is required</string>
+    <string name="photoLibraryAttachPhotoError">Attach photo is required</string>
+    <string name="photoLibraryPhotoFolderError">Photo Folder is required</string>
+    <string name="photoLibrarySelectInternalStaff">Please select Internal Staff</string>
+    <string name="photoLibrarySelectPhotoFolderHint">Please select Photo Folder</string>
+    <string name="photoLibrarySelectJobProjectHint">Please select Job/Project</string>
+    <string name="photoLibrarySelectProjectLocationHint">Please select location</string>
+    <string name="photoLibrarySelectTagsHint">Please select Tags</string>
+    <string name="photoLibraryCommentHint">Please enter comment</string>
+    <string name="photoLibraryUploadedSuccessfully">Photos have been uploaded successfully.</string>
+    <string name="photoLibraryOk">OK</string>
+    <string name="photoLibraryComment">Comments</string>
+    <string name="photoLibrarySearchForInternalStaff">Search for Internal Staff</string>
+    <string name="photoLibrarySearchForTags">Search for Tags</string>
+    <string name="photoLibrarySearchForPhotoFolder">Search for Photo Folder</string>
+    <string name="photoLibrarySearchForJobProject">Search for Job/Project</string>
+    <string name="photoLibrarySearchForProjectLocation">Search for project location</string>
+    <string name="photoLibrarySelected">%d Selected</string>
+    <string name="photoLibraryUncategorized">Uncategorized</string>
+
+</resources>
