@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomDropdownView">
+        <attr name="title_input" format="string" />
+        <attr name="hint_input" format="string" />
+        <attr name="is_selected_view" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomButton">
+        <attr name="debounceClick" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -31,5 +31,13 @@
     <string name="photoLibrarySearchForProjectLocation">Search for project location</string>
     <string name="photoLibrarySelected">%d Selected</string>
     <string name="photoLibraryUncategorized">Uncategorized</string>
+    <string name="upload">Upload</string>
+    <string name="please_select_your_job">Please select your Job</string>
+    <string name="job_project">Job/Project</string>
+    <string name="please_enter_your_comment">Please enter your comment</string>
+    <string name="comment">Comment</string>
+    <string name="please_select_your_folder">Please select your folder</string>
+    <string name="folder">Folder</string>
+    <string name="please_enter_your_word">Please enter your word</string>
 
 </resources>
