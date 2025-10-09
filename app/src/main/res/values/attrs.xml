@@ -4,6 +4,8 @@
         <attr name="title_input" format="string" />
         <attr name="hint_input" format="string" />
         <attr name="is_selected_view" format="boolean" />
+        <attr name="is_required" format="boolean" />
+        <attr name="error_text" format="string" />
     </declare-styleable>
 
     <declare-styleable name="CustomButton">

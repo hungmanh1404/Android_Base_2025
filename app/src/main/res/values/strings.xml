@@ -11,7 +11,7 @@
     <string name="photoLibraryAddingInternalStaff">Adding Internal Staff</string>
     <string name="photoLibrarySendNotificationTo">Send email notification to</string>
     <string name="photoLibraryUploadingToLibrary">Uploading to Library</string>
-    <string name="photoLibraryUpload">Upload</string>
+    <string name="photoLibraryUpload">Upload photo</string>
     <string name="photoLibraryJobError">Job is required</string>
     <string name="photoLibraryAttachPhotoError">Attach photo is required</string>
     <string name="photoLibraryPhotoFolderError">Photo Folder is required</string>
@@ -32,12 +32,20 @@
     <string name="photoLibrarySelected">%d Selected</string>
     <string name="photoLibraryUncategorized">Uncategorized</string>
     <string name="upload">Upload</string>
-    <string name="please_select_your_job">Please select your Job</string>
-    <string name="job_project">Job/Project</string>
+    <string name="please_select_your_job">Please select your job</string>
+    <string name="job_project">Job/Project *</string>
     <string name="please_enter_your_comment">Please enter your comment</string>
-    <string name="comment">Comment</string>
+    <string name="comment">Comment *</string>
     <string name="please_select_your_folder">Please select your folder</string>
     <string name="folder">Folder</string>
     <string name="please_enter_your_word">Please enter your word</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="select_photo">Select Photo</string>
+    <string name="test_fragment_activity">Test Fragment Activity</string>
+    <string name="default_error">Error test</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="please_enter_your_phone_number">Please enter your phone number</string>
+    <string name="please_enter_your_address">Please enter your address</string>
+    <string name="next_fragment">Next Fragment</string>
 
 </resources>

@@ -5,81 +5,143 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:paddingVertical="10dp"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/uploadToLibrary"
+        android:id="@+id/tvTitleUpload"
         style="@style/ItemTitleTextView"
         android:text="@string/uploadToLibrary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/photoLibraryAttachPhoto"
-        style="@style/ItemContentTextView"
-        android:layout_marginTop="@dimen/size_16sp"
-        android:text="@string/photoLibraryAttachPhoto"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/uploadToLibrary" />
-
-    <LinearLayout
-        android:id="@+id/lnImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="6dp"
-        android:background="@drawable/bg_linear_radius"
-        android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/photoLibraryAttachPhoto">
-
-        <ImageView
-            android:id="@+id/myImageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:contentDescription="@string/app_name"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_add" />
-
-    </LinearLayout>
-
-    <com.example.android_base_2025.widget.CustomDropdownView
-        android:id="@+id/ctvJob"
+    <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:hint_input="@string/please_select_your_job"
-        app:is_selected_view="true"
-        app:layout_constraintTop_toBottomOf="@id/lnImageView"
-        app:title_input="@string/job_project" />
-
-    <com.example.android_base_2025.widget.CustomDropdownView
-        android:id="@+id/ctvFolder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:hint_input="@string/please_select_your_folder"
-        app:is_selected_view="true"
-        app:layout_constraintTop_toBottomOf="@id/ctvJob"
-        app:title_input="@string/folder" />
-
-    <com.example.android_base_2025.widget.CustomDropdownView
-        android:id="@+id/ctvComment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:hint_input="@string/please_enter_your_comment"
-        app:is_selected_view="false"
-        app:layout_constraintTop_toBottomOf="@id/ctvFolder"
-        app:title_input="@string/comment" />
-
-
-    <com.example.android_base_2025.widget.CustomButton
-        android:id="@+id/ctbUpload"
-        style="@style/CustomButton"
-        android:text="@string/upload"
+        android:layout_height="0dp"
+        android:paddingHorizontal="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitleUpload">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvAttachPhoto"
+                style="@style/ItemContentTextView"
+                android:layout_marginTop="@dimen/size_16sp"
+                android:text="@string/photoLibraryAttachPhoto"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/bgUpload"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_linear_radius"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAttachPhoto" />
+
+            <ImageView
+                android:id="@+id/imgAdd"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="@id/bgUpload"
+                app:layout_constraintEnd_toEndOf="@id/bgUpload"
+                app:layout_constraintStart_toStartOf="@id/bgUpload"
+                app:layout_constraintTop_toTopOf="@id/bgUpload" />
+
+            <ImageView
+                android:id="@+id/myImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="5dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@id/bgUpload"
+                app:layout_constraintStart_toEndOf="@id/bgUpload"
+                app:layout_constraintTop_toTopOf="@id/bgUpload" />
+
+            <com.example.android_base_2025.widget.CustomDropdownView
+                android:id="@+id/ctvJob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint_input="@string/please_select_your_job"
+                app:is_selected_view="true"
+                app:is_required="true"
+                app:error_text="@string/please_select_your_job"
+                app:layout_constraintTop_toBottomOf="@id/bgUpload"
+                app:title_input="@string/job_project" />
+
+            <com.example.android_base_2025.widget.CustomDropdownView
+                android:id="@+id/ctvFolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint_input="@string/please_select_your_folder"
+                app:is_selected_view="true"
+                app:layout_constraintTop_toBottomOf="@id/ctvJob"
+                app:title_input="@string/folder" />
+
+            <com.example.android_base_2025.widget.CustomDropdownView
+                android:id="@+id/ctvComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hint_input="@string/please_enter_your_comment"
+                app:is_selected_view="false"
+                app:layout_constraintTop_toBottomOf="@id/ctvFolder"
+                app:title_input="@string/comment"
+                app:is_required="true"
+                app:error_text="@string/please_enter_your_comment" />
+
+            <com.example.android_base_2025.widget.CustomButton
+                android:id="@+id/btnTestNavigation"
+                style="@style/CustomButton"
+                android:layout_marginTop="16dp"
+                android:text="@string/test_fragment_activity"
+                android:textSize="@dimen/size_14dp"
+                app:layout_constraintBottom_toTopOf="@id/ctbUpload"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ctvComment" />
+
+<!--            <com.example.android_base_2025.widget.CustomButton-->
+<!--                android:id="@+id/btnTestFragment"-->
+<!--                style="@style/CustomButton"-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:text="@string/test_fragment_activity"-->
+<!--                android:textSize="@dimen/size_14dp"-->
+<!--                app:layout_constraintBottom_toTopOf="@id/ctbUpload"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintWidth_percent="0.5" />-->
+
+            <com.example.android_base_2025.widget.CustomButton
+                android:id="@+id/ctbUpload"
+                style="@style/CustomButton"
+                android:text="@string/upload"
+                android:textSize="@dimen/size_14dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <FrameLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/fragment_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

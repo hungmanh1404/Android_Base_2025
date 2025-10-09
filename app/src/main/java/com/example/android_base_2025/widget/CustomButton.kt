@@ -3,15 +3,21 @@ package com.example.android_base_2025.widget
 import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatButton
+import androidx.core.content.ContextCompat
 import com.example.android_base_2025.R
 
 class CustomButton @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = android.R.attr.buttonStyle
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = android.R.attr.buttonStyle
 ) : AppCompatButton(context, attrs, defStyleAttr) {
 
     private var debounceEnabled = true
     private var lastClickTime = 0L
     private val debounceDelay = 500L // 500ms
+
+    private var enabledBackground: Int = R.drawable.bg_button_rounded
+    private var disabledBackground: Int = R.drawable.bg_button_rounded_disable
 
     init {
         context.theme.obtainStyledAttributes(attrs, R.styleable.CustomButton, 0, 0).apply {
@@ -40,5 +46,19 @@ class CustomButton @JvmOverloads constructor(
 
     override fun setOnClickListener(listener: OnClickListener?) {
         internalClickListener = listener
+    }
+
+    override fun setEnabled(enabled: Boolean) {
+        super.setEnabled(enabled)
+        updateUI(enabled)
+    }
+
+    private fun updateUI(enabled: Boolean) {
+        isClickable = enabled
+        background = ContextCompat.getDrawable(
+            context,
+            if (enabled) enabledBackground else disabledBackground
+        )
+        alpha = if (enabled) 1f else 0.6f
     }
 }

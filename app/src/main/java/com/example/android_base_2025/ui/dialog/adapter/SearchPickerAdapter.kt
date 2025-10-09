@@ -11,10 +11,14 @@ class SearchPickerAdapter(
     private val onItemClick: (PickerItem) -> Unit
 ) : RecyclerView.Adapter<SearchPickerAdapter.ViewHolder>() {
 
-    private var filteredItems: MutableList<PickerItem> = items.toMutableList()
-
     inner class ViewHolder(private val binding: ItemCustomDialogBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.viewItemCustomDialog.setOnClickListener {
+                onItemClick(items[bindingAdapterPosition])
+            }
+        }
 
         fun bind(item: PickerItem) {
             binding.run {
@@ -23,14 +27,6 @@ class SearchPickerAdapter(
                     android.view.View.VISIBLE
                 } else {
                     android.view.View.GONE
-                }
-
-                viewItemCustomDialog.setOnClickListener {
-                    items.forEach { it.isSelected = false }
-                    filteredItems.forEach { it.isSelected = false }
-                    item.isSelected = true
-                    notifyDataSetChanged()
-                    onItemClick(item)
                 }
             }
         }
@@ -42,18 +38,9 @@ class SearchPickerAdapter(
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int = filteredItems.size
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(filteredItems[position])
-    }
-
-    fun filter(query: String) {
-        filteredItems = if (query.isEmpty()) {
-            items.toMutableList()
-        } else {
-            items.filter { it.name.contains(query, ignoreCase = true) }.toMutableList()
-        }
-        notifyDataSetChanged()
+        holder.bind(items[position])
     }
 }
