@@ -41,11 +41,17 @@
     <string name="please_enter_your_word">Please enter your word</string>
     <string name="take_photo">Take Photo</string>
     <string name="select_photo">Select Photo</string>
-    <string name="test_fragment_activity">Test Fragment Activity</string>
+    <string name="test_fragment_activity">Enter user information</string>
+    <string name="navigation_fragment_activity">Test navigation</string>
     <string name="default_error">Error test</string>
     <string name="please_enter_your_name">Please enter your name</string>
     <string name="please_enter_your_phone_number">Please enter your phone number</string>
     <string name="please_enter_your_address">Please enter your address</string>
     <string name="next_fragment">Next Fragment</string>
+    <string name="user_data_note">User Data Note</string>
+    <string name="save">Save</string>
+    <string name="address">Address</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
 
 </resources>

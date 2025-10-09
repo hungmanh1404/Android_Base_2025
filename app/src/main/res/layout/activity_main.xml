@@ -13,6 +13,7 @@
         style="@style/ItemTitleTextView"
         android:text="@string/uploadToLibrary"
         app:layout_constraintStart_toStartOf="parent"
+        android:paddingVertical="20dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
@@ -100,15 +101,45 @@
                 app:error_text="@string/please_enter_your_comment" />
 
             <com.example.android_base_2025.widget.CustomButton
-                android:id="@+id/btnTestNavigation"
+                android:id="@+id/btnUserInfo"
                 style="@style/CustomButton"
                 android:layout_marginTop="16dp"
                 android:text="@string/test_fragment_activity"
                 android:textSize="@dimen/size_14dp"
-                app:layout_constraintBottom_toTopOf="@id/ctbUpload"
+                app:layout_constraintBottom_toTopOf="@id/tvSavedForms"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ctvComment" />
+
+            <com.example.android_base_2025.widget.CustomButton
+                android:id="@+id/btnNavigation"
+                style="@style/CustomButton"
+                android:layout_marginTop="16dp"
+                android:text="@string/navigation_fragment_activity"
+                android:textSize="@dimen/size_14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnUserInfo" />
+
+            <TextView
+                android:id="@+id/tvSavedForms"
+                style="@style/ItemContentTextView"
+                android:layout_marginTop="16dp"
+                android:text="@string/user_data_note"
+                android:textSize="16sp"
+                android:fontFamily="@font/avenir_next_demi_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnNavigation" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvForms"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSavedForms"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/ctbUpload" />
 
             <com.example.android_base_2025.widget.CustomButton
                 android:id="@+id/ctbUpload"

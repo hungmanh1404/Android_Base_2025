@@ -14,12 +14,18 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
+import com.example.android_base_2025.data.local.NoteRepository
+import com.example.android_base_2025.data.local.UserFormRepository
 import com.example.android_base_2025.data.vo.PickerItem
 import com.example.android_base_2025.data.vo.UserData
 import com.example.android_base_2025.databinding.ActivityMainBinding
+import com.example.android_base_2025.ui.FormFragment
+import com.example.android_base_2025.ui.UserFormAdapter
 import com.example.android_base_2025.utils.AppPrefs
 import com.example.android_base_2025.widget.CustomDialog
 import com.example.android_base_2025.widget.CustomDropdownView
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
@@ -27,6 +33,9 @@ class MainActivity : AppCompatActivity() {
 
     private var selectedImageUri: Uri? = null
     private var selectedBitmap: Bitmap? = null
+    private lateinit var noteRepository: NoteRepository
+    private var formsAdapter: UserFormAdapter? = null
+    private lateinit var userFormRepository: UserFormRepository
 
     private val itemsProject = listOf(
         PickerItem(
@@ -56,7 +65,19 @@ class MainActivity : AppCompatActivity() {
 
         restoreFlowData()
 
+        // Room demo: init repository
+        noteRepository = NoteRepository(this)
+
+        userFormRepository = UserFormRepository(this)
+        observeForms()
+
         binding?.run {
+            rvForms.layoutManager =
+                androidx.recyclerview.widget.LinearLayoutManager(this@MainActivity)
+            formsAdapter = UserFormAdapter { item ->
+                lifecycleScope.launch { userFormRepository.delete(item.id) }
+            }
+            rvForms.adapter = formsAdapter
             with(ctvJob) {
                 onClickDropdownItem = {
                     handleShowItem(
@@ -99,7 +120,12 @@ class MainActivity : AppCompatActivity() {
                 AppPrefs.saveFlowData(AppPrefs.KEY_COMMENT, ctvComment.getData())
             }
 
-            btnTestNavigation.setOnClickListener {
+            btnUserInfo.setOnClickListener {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, FormFragment())
+                    .addToBackStack("FormFragment").commit()
+            }
+            btnNavigation.setOnClickListener {
                 supportFragmentManager.beginTransaction()
                     .add(R.id.fragment_container, FlowContainerFragment())
                     .addToBackStack("FlowContainerFragment").commit()
@@ -171,6 +197,17 @@ class MainActivity : AppCompatActivity() {
                 "Upload thành công!",
                 android.widget.Toast.LENGTH_SHORT
             ).show()
+        }
+    }
+
+    private fun observeForms() {
+        lifecycleScope.launch {
+            com.example.android_base_2025.data.local.AppDatabase.getInstance(this@MainActivity)
+                .userFormDao()
+                .getAll()
+                .collect { forms ->
+                    formsAdapter?.submitList(forms)
+                }
         }
     }
 
