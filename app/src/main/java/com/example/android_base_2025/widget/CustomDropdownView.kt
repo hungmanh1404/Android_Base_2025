@@ -119,7 +119,7 @@ class CustomDropdownView @JvmOverloads constructor(
     private fun updateIcon() {
         if (!isSelectedView) return
         val hasData = binding.edtInput.text.isNotEmpty()
-        val iconRes = if (hasData) R.drawable.ic_checkbox else R.drawable.ic_arrow_down
+        val iconRes = if (hasData) R.drawable.ic_close_modal else R.drawable.ic_arrow_down
         binding.imageView.setImageResource(iconRes)
     }
 }

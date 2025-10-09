@@ -54,6 +54,8 @@ class MainActivity : AppCompatActivity() {
 
         AppPrefs.init(this) //init SharePreferences
 
+        restoreFlowData()
+
         binding?.run {
             with(ctvJob) {
                 onClickDropdownItem = {
@@ -66,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                     itemsProject.forEach {
                         it.isSelected = false
                     }
+                    AppPrefs.saveFlowData(AppPrefs.KEY_JOB, "")
                 }
             }
 
@@ -80,6 +83,7 @@ class MainActivity : AppCompatActivity() {
                     itemsFolder.forEach {
                         it.isSelected = false
                     }
+                    AppPrefs.saveFlowData(AppPrefs.KEY_FOLDER, "")
                 }
             }
 
@@ -92,6 +96,7 @@ class MainActivity : AppCompatActivity() {
             }
             ctvComment.onChangeTextListener {
                 validateForm()
+                AppPrefs.saveFlowData(AppPrefs.KEY_COMMENT, ctvComment.getData())
             }
 
             btnTestNavigation.setOnClickListener {
@@ -114,6 +119,13 @@ class MainActivity : AppCompatActivity() {
                     it.isSelected = it == selectedItem
                 }
                 adapter?.notifyDataSetChanged()
+
+                // Lưu dữ liệu khi chọn item
+                if (view == binding?.ctvJob) {
+                    AppPrefs.saveFlowData(AppPrefs.KEY_JOB, selectedItem.name)
+                } else if (view == binding?.ctvFolder) {
+                    AppPrefs.saveFlowData(AppPrefs.KEY_FOLDER, selectedItem.name)
+                }
             }
         }.show(supportFragmentManager, "SearchPicker")
     }
@@ -132,7 +144,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun handleUpload() {
-        validateForm()
+        if (!validateForm()) return
 
         binding?.run {
             val job = ctvJob.getData()
@@ -143,9 +155,24 @@ class MainActivity : AppCompatActivity() {
             Log.d("UPLOAD", "Comment: $comment")
             Log.d("UPLOAD", "ImageUri: $selectedImageUri")
             Log.d("UPLOAD", "Bitmap: ${selectedBitmap != null}")
+            AppPrefs.clearFlowData()
+            ctvJob.setData("")
+            ctvFolder.setData("")
+            ctvComment.setData("")
+            itemsProject.forEach {
+                it.isSelected = false
+            }
+            itemsFolder.forEach {
+                it.isSelected = false
+            }
+
+            android.widget.Toast.makeText(
+                this@MainActivity,
+                "Upload thành công!",
+                android.widget.Toast.LENGTH_SHORT
+            ).show()
         }
     }
-
 
     private fun showImagePickerDialog() {
         val options = arrayOf(getString(R.string.take_photo), getString(R.string.select_photo))
@@ -196,9 +223,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onFlowCompleted(flowData: UserData) {
-        Log.d("vaoday", flowData.toString())
-
         binding?.ctvComment?.setData(flowData.toString())
     }
 
+    private fun restoreFlowData() {
+        binding?.run {
+            val savedComment = AppPrefs.getFlowData(AppPrefs.KEY_COMMENT)
+            val savedFolder = AppPrefs.getFlowData(AppPrefs.KEY_FOLDER)
+            val savedJob = AppPrefs.getFlowData(AppPrefs.KEY_JOB)
+
+            if (savedComment.isNotEmpty()) {
+                ctvComment.setData(savedComment)
+            }
+            if (savedFolder.isNotEmpty()) {
+                ctvFolder.setData(savedFolder)
+            }
+            if (savedJob.isNotEmpty()) {
+                ctvJob.setData(savedJob)
+            }
+        }
+    }
 }

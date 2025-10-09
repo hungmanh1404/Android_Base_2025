@@ -47,14 +47,14 @@ class FlowContainerFragment : Fragment() {
             .commit()
     }
 
-    fun showFragment3() {
+    internal fun showFragment3() {
         childFragmentManager.beginTransaction()
             .add(R.id.child_container, Fragment3())
             .addToBackStack("Fragment3")
             .commit()
     }
 
-    fun goBack() {
+    internal fun goBack() {
         // chỉ pop trong childFragmentManager
         if (childFragmentManager.backStackEntryCount > 0) {
             childFragmentManager.popBackStack()
@@ -64,12 +64,12 @@ class FlowContainerFragment : Fragment() {
         }
     }
 
-    fun backTo(tag: String, inclusive: Boolean = false) {
+    internal fun backTo(tag: String, inclusive: Boolean = false) {
         val flag = if (inclusive) FragmentManager.POP_BACK_STACK_INCLUSIVE else 0
         childFragmentManager.popBackStack(tag, flag)
     }
 
-    fun completeFlow() {
+    internal fun completeFlow() {
         (activity as? MainActivity)?.onFlowCompleted(userData)
     }
 

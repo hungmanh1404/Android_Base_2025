@@ -110,17 +110,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ctvComment" />
 
-<!--            <com.example.android_base_2025.widget.CustomButton-->
-<!--                android:id="@+id/btnTestFragment"-->
-<!--                style="@style/CustomButton"-->
-<!--                android:layout_marginTop="16dp"-->
-<!--                android:text="@string/test_fragment_activity"-->
-<!--                android:textSize="@dimen/size_14dp"-->
-<!--                app:layout_constraintBottom_toTopOf="@id/ctbUpload"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintWidth_percent="0.5" />-->
-
             <com.example.android_base_2025.widget.CustomButton
                 android:id="@+id/ctbUpload"
                 style="@style/CustomButton"
