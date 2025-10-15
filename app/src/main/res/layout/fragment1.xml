@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="20dp">
-
+    android:orientation="vertical"
+    android:gravity="center"
+    android:focusable="true"
+    android:clickable="true"
+    android:padding="16dp"
+    android:background="#EEEEEE">
     <TextView
-        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/please_enter_your_name"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@id/btnNext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/linearlayout_demo"
+        android:textSize="20sp"
+        android:fontFamily="@font/avenir_next_demi_bold"
+        />
 
+    <!-- 1️⃣ Ô màu đỏ: căn trái, có margin -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#F2DDDD">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:background="#F44336"
+            android:layout_weight="1" />
+        <!-- Khoảng trống co giãn -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="#C8F436" />
+    </LinearLayout>
+
+    <!-- 2️⃣ Ô màu xanh: căn giữa ngang -->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#2196F3"
+        android:layout_marginBottom="12dp"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- 3️⃣ Ô màu xanh lá: căn phải, có padding bên trong -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:layout_marginBottom="12dp"
+        android:layout_gravity="end"
+        android:background="#4CAF50">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inside padding"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- 4️⃣ Ô màu tím: weight = 1 (chiếm hết không gian còn lại theo chiều dọc) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#9C27B0" />
+
+    <!-- 5️⃣ Ô màu cam: nằm ngang, có các khối con với weight khác nhau -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp"
+        android:background="#FFC107">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FF5722" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#03A9F4" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#4CAF50" />
+    </LinearLayout>
+
+    <!-- 6️⃣ Ô màu xám: thử visibility -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="#9E9E9E"
+        android:visibility="visible" />
+
+    <!-- 7️⃣ View custom của bạn -->
     <com.example.android_base_2025.widget.CustomDropdownView
         android:id="@+id/ctvComment"
         android:layout_width="match_parent"
@@ -27,20 +119,16 @@
         app:hint_input="@string/please_enter_your_comment"
         app:error_text="@string/please_enter_your_comment"
         app:is_selected_view="false"
-        app:is_required="true"
-        app:layout_constraintBottom_toTopOf="@id/btnNext"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+        app:is_required="true" />
 
+    <!-- 8️⃣ Nút cuối -->
     <Button
         android:id="@+id/btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="24dp"
         android:paddingVertical="12dp"
+        android:layout_marginTop="12dp"
         android:text="@string/next_fragment"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="16sp" />
+</LinearLayout>

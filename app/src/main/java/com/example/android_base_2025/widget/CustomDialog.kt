@@ -8,7 +8,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_base_2025.data.vo.PickerItem
 import com.example.android_base_2025.databinding.CustomDialogViewBinding
-import com.example.android_base_2025.ui.dialog.adapter.SearchPickerAdapter
+import com.example.android_base_2025.ui.adapter.SearchPickerAdapter
 
 class CustomDialog(
     private val items: List<PickerItem>

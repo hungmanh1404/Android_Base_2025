@@ -20,8 +20,9 @@ import com.example.android_base_2025.data.local.UserFormRepository
 import com.example.android_base_2025.data.vo.PickerItem
 import com.example.android_base_2025.data.vo.UserData
 import com.example.android_base_2025.databinding.ActivityMainBinding
+import com.example.android_base_2025.ui.FlowContainerFragment
 import com.example.android_base_2025.ui.FormFragment
-import com.example.android_base_2025.ui.UserFormAdapter
+import com.example.android_base_2025.ui.adapter.UserFormAdapter
 import com.example.android_base_2025.utils.AppPrefs
 import com.example.android_base_2025.widget.CustomDialog
 import com.example.android_base_2025.widget.CustomDropdownView
@@ -259,7 +260,7 @@ class MainActivity : AppCompatActivity() {
         pickImageLauncher.launch("image/*")
     }
 
-    fun onFlowCompleted(flowData: UserData) {
+   internal fun onFlowCompleted(flowData: UserData) {
         binding?.ctvComment?.setData(flowData.toString())
     }
 

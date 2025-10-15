@@ -60,11 +60,12 @@
 
             <ImageView
                 android:id="@+id/myImageView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="5dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintBottom_toBottomOf="@id/bgUpload"
                 app:layout_constraintStart_toEndOf="@id/bgUpload"
                 app:layout_constraintTop_toTopOf="@id/bgUpload" />
@@ -87,7 +88,8 @@
                 app:hint_input="@string/please_select_your_folder"
                 app:is_selected_view="true"
                 app:layout_constraintTop_toBottomOf="@id/ctvJob"
-                app:title_input="@string/folder" />
+                app:title_input="@string/folder" >
+            </com.example.android_base_2025.widget.CustomDropdownView>
 
             <com.example.android_base_2025.widget.CustomDropdownView
                 android:id="@+id/ctvComment"
@@ -162,6 +164,4 @@
         android:id="@+id/fragment_container"
         android:layout_width="0dp"
         android:layout_height="0dp" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

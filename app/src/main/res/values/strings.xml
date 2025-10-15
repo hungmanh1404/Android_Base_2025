@@ -53,5 +53,7 @@
     <string name="address">Address</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="linearlayout_demo">LinearLayout Demo</string>
+    <string name="relativelayout_demo">RelativeLayout Demo</string>
 
 </resources>

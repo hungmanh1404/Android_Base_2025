@@ -1,6 +1,7 @@
-package com.example.android_base_2025.ui.dialog.adapter
+package com.example.android_base_2025.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android_base_2025.data.vo.PickerItem
@@ -24,9 +25,9 @@ class SearchPickerAdapter(
             binding.run {
                 textView.text = item.name
                 iconView.visibility = if (item.isSelected) {
-                    android.view.View.VISIBLE
+                    View.VISIBLE
                 } else {
-                    android.view.View.GONE
+                    View.GONE
                 }
             }
         }

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/CalculatorButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="1" />
+
+                <TextView
+                    style="@style/CalculatorButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="2" />
+
+                <TextView
+                    style="@style/CalculatorButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/CalculatorButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="0" />
+
+                <TextView
+                    style="@style/CalculatorButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="." />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/zero"
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="=" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="4" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="5" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="6" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="+" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout2"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/tv7"
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="7" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="8" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="9" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="-" />
+
+    </LinearLayout>
+
+<!--FrameLayout-->
+    <FrameLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout3">
+
+        <TextView
+            android:id="@+id/tv9"
+            style="@style/CalculatorButton"
+            android:layout_width="100dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:text="9" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:id="@+id/tv6"
+            android:layout_width="100dp"
+            android:layout_weight="1"
+            android:text="6" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout2"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/tvK"
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="K" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="k" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="C" />
+
+        <TextView
+            style="@style/CalculatorButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text=":" />
+    </LinearLayout>
+</RelativeLayout>

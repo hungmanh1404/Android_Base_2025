@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:focusable="true"
+    android:clickable="true"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/zero"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/dot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintHeight_percent="0.1" />
+
+    <TextView
+        android:id="@+id/dot"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/equal"
+        app:layout_constraintStart_toEndOf="@id/zero"
+        app:layout_constraintTop_toTopOf="@id/zero"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/equal"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="="
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toEndOf="@id/dot"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--hang 1 2 3-->
+    <TextView
+        android:id="@+id/one"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="1"
+        app:layout_constraintBottom_toTopOf="@id/zero"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/two"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="2"
+        app:layout_constraintBottom_toTopOf="@id/zero"
+        app:layout_constraintEnd_toStartOf="@id/three"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/three"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@id/zero"
+        app:layout_constraintEnd_toStartOf="@id/equal"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/zero"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <!--  hang 4,5,6,+-->
+    <TextView
+        android:id="@+id/four"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="4"
+        app:layout_constraintBottom_toTopOf="@id/one"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/five"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="5"
+        app:layout_constraintBottom_toTopOf="@id/two"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/four"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/six"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="6"
+        app:layout_constraintBottom_toTopOf="@id/three"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/five"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/plus"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@id/equal"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/six"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--7,8,9,- -->
+    <TextView
+        android:id="@+id/seven"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@id/four"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/eight"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="8"
+        app:layout_constraintBottom_toTopOf="@id/five"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/seven"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/nine"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="9"
+        app:layout_constraintBottom_toTopOf="@id/six"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/eight"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/minus"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="-"
+        app:layout_constraintBottom_toTopOf="@id/plus"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/nine"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/squareRoot"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="√"
+        app:layout_constraintBottom_toTopOf="@id/seven"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/left_brackets"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="("
+        app:layout_constraintBottom_toTopOf="@id/eight"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/squareRoot"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/right_brackets"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=")"
+        app:layout_constraintBottom_toTopOf="@id/nine"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/left_brackets"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/multiplication"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="X"
+        app:layout_constraintBottom_toTopOf="@id/nine"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/right_brackets"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/exclamation"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="!"
+        app:layout_constraintBottom_toTopOf="@id/squareRoot"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/arrow"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="k"
+        app:layout_constraintBottom_toTopOf="@id/left_brackets"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/exclamation"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/c"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="C"
+        app:layout_constraintBottom_toTopOf="@id/right_brackets"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/arrow"
+        app:layout_constraintWidth_percent="0.25" />
+
+    <TextView
+        android:id="@+id/division"
+        style="@style/CalculatorButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=":"
+        app:layout_constraintBottom_toTopOf="@id/multiplication"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toEndOf="@id/c"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.25" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

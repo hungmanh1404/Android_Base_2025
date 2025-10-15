@@ -1,46 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:padding="20dp">
-
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/please_enter_your_address"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/btnNext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.example.android_base_2025.widget.CustomDropdownView
-        android:id="@+id/ctvComment"
+    android:background="#EEEEEE"
+    android:focusable="true"
+    android:clickable="true"
+    android:padding="16dp"
+    android:fillViewport="true">
+    <!-- Bọc tất cả bên trong RelativeLayout -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_input="@string/comment"
-        app:hint_input="@string/please_enter_your_comment"
-        app:error_text="@string/please_enter_your_comment"
-        app:is_selected_view="false"
-        app:is_required="true"
-        app:layout_constraintBottom_toTopOf="@id/btnNext"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next Fragment"
-        android:textSize="16sp"
-        android:paddingHorizontal="24dp"
-        android:paddingVertical="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <!-- 1️⃣ Tiêu đề -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/relativelayout_demo"
+            android:textSize="20sp"
+            android:fontFamily="@font/avenir_next_demi_bold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- 2️⃣ Hai khối View nằm hai bên -->
+        <RelativeLayout
+            android:id="@+id/rowRedGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F2DDDD"
+            android:layout_centerHorizontal="true"
+            android:padding="6dp"
+            android:layout_below="@id/tvTitle">
+
+            <!-- Khối đỏ bên trái -->
+            <View
+                android:id="@+id/viewRed"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#F44336" />
+
+
+            <View
+                android:id="@+id/viewPink"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:background="#E0BDBA"
+                android:layout_toStartOf="@id/viewGreen"
+                android:layout_toEndOf="@id/viewRed"
+                />
+
+            <!-- Khối xanh bên phải -->
+            <View
+                android:id="@+id/viewGreen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#C8F436"
+                android:layout_alignParentEnd="true"
+                />
+        </RelativeLayout>
+
+        <!-- 3️⃣ Ô màu xanh căn giữa ngang -->
+        <View
+            android:id="@+id/viewBlue"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/rowRedGreen"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:background="#2196F3" />
+
+        <!-- 4️⃣ Ô xanh lá có padding và chữ bên trong -->
+        <LinearLayout
+            android:id="@+id/layoutGreenBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viewBlue"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="12dp"
+            android:background="#4CAF50"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inside padding"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- 5️⃣ Ô màu tím -->
+        <View
+            android:id="@+id/viewPurple"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/layoutGreenBox"
+            android:layout_marginTop="12dp"
+            android:background="#9C27B0" />
+
+        <!-- 6️⃣ Ô màu cam nằm ngang chứa 3 khối -->
+        <RelativeLayout
+            android:id="@+id/layoutOrange"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/viewPurple"
+            android:layout_marginTop="12dp"
+            android:background="#FFC107">
+
+            <View
+                android:id="@+id/viewOrangeLeft"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:background="#FF5722" />
+
+            <View
+                android:id="@+id/viewOrangeCenter"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="#03A9F4" />
+
+            <View
+                android:id="@+id/viewOrangeRight"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:background="#4CAF50" />
+        </RelativeLayout>
+
+        <!-- 7️⃣ Ô màu xám thử visibility -->
+        <View
+            android:id="@+id/viewGray"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/layoutOrange"
+            android:layout_marginTop="12dp"
+            android:background="#9E9E9E"
+            android:visibility="visible" />
+
+
+        <TextView
+            android:id="@+id/tvTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/please_enter_your_address"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_below="@id/viewGray"
+             />
+
+        <!-- 8️⃣ View custom -->
+        <com.example.android_base_2025.widget.CustomDropdownView
+            android:id="@+id/ctvComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitle2"
+            android:layout_marginTop="12dp"
+            app:title_input="@string/comment"
+            app:hint_input="@string/please_enter_your_comment"
+            app:error_text="@string/please_enter_your_comment"
+            app:is_selected_view="false"
+            app:is_required="true" />
+
+        <!-- 9️⃣ Nút Next -->
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_fragment"
+            android:textSize="16sp"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:layout_below="@id/ctvComment"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp" />
+
+    </RelativeLayout>
+</ScrollView>

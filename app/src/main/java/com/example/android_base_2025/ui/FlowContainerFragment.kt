@@ -1,4 +1,4 @@
-package com.example.android_base_2025
+package com.example.android_base_2025.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.example.android_base_2025.ui.Fragment2
+import com.example.android_base_2025.ui.Fragment3
+import com.example.android_base_2025.MainActivity
+import com.example.android_base_2025.R
 import com.example.android_base_2025.data.vo.UserData
 import com.example.android_base_2025.databinding.FragmentFlowContainerBinding
 
@@ -51,6 +55,27 @@ class FlowContainerFragment : Fragment() {
         childFragmentManager.beginTransaction()
             .add(R.id.child_container, Fragment3())
             .addToBackStack("Fragment3")
+            .commit()
+    }
+
+    internal fun showFragment4() {
+        childFragmentManager.beginTransaction()
+            .add(R.id.child_container, Fragment4())
+            .addToBackStack("Fragment4")
+            .commit()
+    }
+
+    internal fun showFragment5() {
+        childFragmentManager.beginTransaction()
+            .add(R.id.child_container, Fragment5())
+            .addToBackStack("Fragment5")
+            .commit()
+    }
+
+    internal fun showFragment6() {
+        childFragmentManager.beginTransaction()
+            .add(R.id.child_container, Fragment6())
+            .addToBackStack("Fragment6")
             .commit()
     }
 
