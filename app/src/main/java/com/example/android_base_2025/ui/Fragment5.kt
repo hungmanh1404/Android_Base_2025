@@ -29,4 +29,12 @@ class Fragment5 : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    companion object {
+        internal fun newInstance() = Fragment5().apply {
+            arguments = Bundle().apply {
+
+            }
+        }
+    }
 }

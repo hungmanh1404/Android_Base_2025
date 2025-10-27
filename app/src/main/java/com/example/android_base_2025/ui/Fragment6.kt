@@ -51,4 +51,12 @@ class Fragment6 : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    companion object {
+        internal fun newInstance() = Fragment6().apply {
+            arguments = Bundle().apply {
+
+            }
+        }
+    }
 }

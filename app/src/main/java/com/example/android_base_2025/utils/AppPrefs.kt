@@ -18,7 +18,7 @@ object AppPrefs {
 
 
     internal fun init(context: Context) {
-        prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        prefs = context.applicationContext.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
     }
 
     // ----------- BASIC TYPES -----------

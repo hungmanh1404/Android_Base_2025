@@ -28,7 +28,7 @@ class Fragment1 : Fragment() {
         binding?.run {
             ctvComment.setData(flowHost?.userData?.name ?: "")
             btnNext.setOnClickListener {
-                flowHost?.userData?.name =  ctvComment.getData()
+                flowHost?.userData?.name = ctvComment.getData()
                 flowHost?.showFragment2()
 
 //            requireActivity().supportFragmentManager.beginTransaction()
@@ -42,5 +42,13 @@ class Fragment1 : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        internal fun newInstance() = Fragment1().apply {
+            arguments = Bundle().apply {
+
+            }
+        }
     }
 }

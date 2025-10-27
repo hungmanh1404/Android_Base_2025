@@ -30,7 +30,7 @@ class Fragment2 : Fragment() {
             ctvComment.setData(flowHost?.userData?.address ?: "")
             btnNext.setOnClickListener {
                 flowHost?.userData?.address = ctvComment.getData()
-                flowHost?.showFragment3()
+                flowHost?.showFragment3(userName = "Nguyen Manh")
             }
         }
 
@@ -45,5 +45,13 @@ class Fragment2 : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        internal fun newInstance() = Fragment2().apply {
+            arguments = Bundle().apply {
+
+            }
+        }
     }
 }

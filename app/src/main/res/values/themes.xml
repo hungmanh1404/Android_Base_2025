@@ -50,7 +50,5 @@
         <item name="android:textSize">20sp</item>
         <item name="android:gravity">center</item>
         <item name="fontFamily">@font/avenir_next_demi_bold</item>
-
     </style>
-
 </resources>

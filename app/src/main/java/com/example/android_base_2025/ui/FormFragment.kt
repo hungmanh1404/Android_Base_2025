@@ -50,4 +50,11 @@ class FormFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+    companion object {
+        internal fun newInstance() = FormFragment().apply {
+            arguments = Bundle().apply {
+
+            }
+        }
+    }
 }

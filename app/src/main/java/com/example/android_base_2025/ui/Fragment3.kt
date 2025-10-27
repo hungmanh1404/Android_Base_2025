@@ -1,6 +1,7 @@
 package com.example.android_base_2025.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,12 +44,23 @@ class Fragment3 : Fragment() {
             btnRelativeLayout.setOnClickListener {
                 flowHost?.showFragment6()
             }
-
+        } ?: {
+            Log.d("xu ly truong hop null", "")
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        private const val KEY_USER = "user"
+
+        internal fun newInstance(userName: String) = Fragment3().apply {
+            arguments = Bundle().apply {
+                putString(KEY_USER, userName)
+            }
+        }
     }
 }

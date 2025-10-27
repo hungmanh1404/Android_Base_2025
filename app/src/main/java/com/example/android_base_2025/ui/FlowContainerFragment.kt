@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import com.example.android_base_2025.ui.Fragment2
-import com.example.android_base_2025.ui.Fragment3
 import com.example.android_base_2025.MainActivity
 import com.example.android_base_2025.R
 import com.example.android_base_2025.data.vo.UserData
@@ -17,7 +15,7 @@ class FlowContainerFragment : Fragment() {
 
     private var _binding: FragmentFlowContainerBinding? = null
     private val binding get() = _binding!!
-    // Dữ liệu toàn flow
+
     internal val userData = UserData()
 
     override fun onCreateView(
@@ -39,42 +37,42 @@ class FlowContainerFragment : Fragment() {
 
     private fun showFragment1() {
         childFragmentManager.beginTransaction()
-            .add(R.id.child_container, Fragment1())
+            .add(R.id.child_container, Fragment1.newInstance())
             .addToBackStack("Fragment1")
             .commit()
     }
 
     internal fun showFragment2() {
         childFragmentManager.beginTransaction()
-            .add(R.id.child_container, Fragment2())
+            .add(R.id.child_container, Fragment2.newInstance())
             .addToBackStack("Fragment2")
             .commit()
     }
 
-    internal fun showFragment3() {
+    internal fun showFragment3(userName: String) {
         childFragmentManager.beginTransaction()
-            .add(R.id.child_container, Fragment3())
+            .add(R.id.child_container, Fragment3.newInstance(userName = userName))
             .addToBackStack("Fragment3")
             .commit()
     }
 
     internal fun showFragment4() {
         childFragmentManager.beginTransaction()
-            .add(R.id.child_container, Fragment4())
+            .add(R.id.child_container, Fragment4.newInstance())
             .addToBackStack("Fragment4")
             .commit()
     }
 
     internal fun showFragment5() {
         childFragmentManager.beginTransaction()
-            .add(R.id.child_container, Fragment5())
+            .add(R.id.child_container, Fragment5.newInstance())
             .addToBackStack("Fragment5")
             .commit()
     }
 
     internal fun showFragment6() {
         childFragmentManager.beginTransaction()
-            .add(R.id.child_container, Fragment6())
+            .add(R.id.child_container, Fragment6.newInstance())
             .addToBackStack("Fragment6")
             .commit()
     }

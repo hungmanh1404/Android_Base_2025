@@ -260,5 +260,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintWidth_percent="0.25" />
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

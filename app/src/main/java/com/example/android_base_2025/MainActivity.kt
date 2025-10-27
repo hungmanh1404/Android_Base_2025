@@ -79,6 +79,52 @@ class MainActivity : AppCompatActivity() {
                 lifecycleScope.launch { userFormRepository.delete(item.id) }
             }
             rvForms.adapter = formsAdapter
+            val b = ctvJob.apply {
+                onClickDropdownItem = {
+                    handleShowItem(
+                        data = itemsProject, view = this
+                    )
+                }
+
+                onClearSelectedItem = {
+                    itemsProject.forEach {
+                        it.isSelected = false
+                    }
+                    AppPrefs.saveFlowData(AppPrefs.KEY_JOB, "")
+                }
+
+                "String"
+            }
+
+            val aLet = ctvJob.let {
+
+            }
+
+            val aAlso = ctvJob.also {
+
+            }
+
+            val aWith = with(ctvJob) {
+
+            }
+
+            val a = ctvJob.run {
+                onClickDropdownItem = {
+                    handleShowItem(
+                        data = itemsProject, view = this
+                    )
+                }
+
+                onClearSelectedItem = {
+                    itemsProject.forEach {
+                        it.isSelected = false
+                    }
+                    AppPrefs.saveFlowData(AppPrefs.KEY_JOB, "")
+                }
+
+                "String"
+            }
+
             with(ctvJob) {
                 onClickDropdownItem = {
                     handleShowItem(
@@ -93,7 +139,6 @@ class MainActivity : AppCompatActivity() {
                     AppPrefs.saveFlowData(AppPrefs.KEY_JOB, "")
                 }
             }
-
 
             with(ctvFolder) {
                 onClickDropdownItem = {
@@ -133,7 +178,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
 
     @SuppressLint("NotifyDataSetChanged")
     private fun handleShowItem(data: List<PickerItem>, view: CustomDropdownView) {
@@ -260,7 +304,7 @@ class MainActivity : AppCompatActivity() {
         pickImageLauncher.launch("image/*")
     }
 
-   internal fun onFlowCompleted(flowData: UserData) {
+    internal fun onFlowCompleted(flowData: UserData) {
         binding?.ctvComment?.setData(flowData.toString())
     }
 
